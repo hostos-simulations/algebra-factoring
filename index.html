@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Algebra Factoring Simulation</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>College Algebra Factoring Simulation</h1>
+  
+  <div class="mode-selection">
+    <button class="mode-btn" onclick="setMode('practice')">Practice Mode</button>
+    <button class="mode-btn" onclick="setMode('study')">Study Mode</button>
+  </div>
+
+  <!-- PRACTICE MODE SECTION -->
+  <div id="practiceMode" class="hidden">
+    <h2>Practice Mode</h2>
+    <div class="practice-area">
+      <p class="question-text" id="practiceQuestion"></p>
+      
+      <!-- This container will be dynamically filled with input fields -->
+      <div id="factor-inputs-container"></div>
+
+      <div class="action-buttons">
+          <button id="submit-btn" onclick="checkAnswer()">Submit Answer</button>
+          <button id="next-btn" class="hidden" onclick="loadRandomQuestion()">Next Question</button>
+      </div>
+      <div id="practiceFeedback" class="feedback hidden"></div>
+      <div id="practiceSolution" class="solution-box hidden"></div>
+    </div>
+  </div>
+
+  <!-- STUDY MODE SECTION (Unchanged) -->
+  <div id="studyMode" class="hidden">
+    <h2>Study Mode: Factoring Methods</h2>
+    <div class="study-area">
+      <div class="method-card">
+        <h3>1. Greatest Common Factor (GCF)</h3>
+        <p>Always check for a GCF first! It's the largest term that divides into every term of the polynomial.</p>
+        <p><b>Example:</b> Factor <code>6x³ + 9x²</code> &rarr; <code>3x²(2x + 3)</code></p>
+      </div>
+      <div class="method-card">
+        <h3>2. Difference of Squares</h3>
+        <p>Applies to binomials of the form <code>a² - b²</code>. It factors into <code>(a - b)(a + b)</code>.</p>
+        <p><b>Example:</b> Factor <code>x² - 25</code> &rarr; <code>(x - 5)(x + 5)</code></p>
+      </div>
+      <div class="method-card">
+        <h3>3. Trinomials (form x² + bx + c)</h3>
+        <p>Find two numbers that <b>multiply</b> to <code>c</code> and <b>add</b> to <code>b</code>.</p>
+        <p><b>Example:</b> Factor <code>x² - 5x + 6</code> &rarr; <code>(x - 2)(x - 3)</code></p>
+      </div>
+      <div class="method-card">
+        <h3>4. Trinomials (form ax² + bx + c) - AC Method</h3>
+        <p>When 'a' is not 1, use the "AC Method" or "Grouping".</p>
+        <p><b>Example:</b> Factor <code>2x² + 7x + 3</code> &rarr; <code>(x + 3)(2x + 1)</code></p>
+      </div>
+      <div class="method-card">
+        <h3>5. Sum and Difference of Cubes</h3>
+        <p>Formulas: <code>a³ + b³ = (a + b)(a² - ab + b²)</code> and <code>a³ - b³ = (a - b)(a² + ab + b²)</code></p>
+        <p><b>Example:</b> Factor <code>x³ - 8</code> &rarr; <code>(x - 2)(x² + 2x + 4)</code></p>
+      </div>
+      <div class="method-card">
+        <h3>6. Factoring by Grouping</h3>
+        <p>Used for polynomials with four terms. Group terms and find a GCF for each pair.</p>
+        <p><b>Example:</b> Factor <code>x³ + 2x² + 3x + 6</code> &rarr; <code>(x² + 3)(x + 2)</code></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
